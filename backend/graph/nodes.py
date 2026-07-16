@@ -7,9 +7,7 @@ from tools.reverse_text import reverse_text
 
 
 def chatbot_node(state: GraphState):
-
     response = llm.invoke(state["messages"])
-
     return {
         "messages": state["messages"] + [response]
     }

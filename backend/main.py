@@ -20,16 +20,10 @@ def home():
 @app.get("/chat")
 
 def chat(query: str = Query(...)):
-
     response = graph.invoke({
-
         "messages": [HumanMessage(content=query)]
-
     })
-
     return {
         "tool_used": response["tool"],
-
         "response": response["messages"][-1].content
-
     }
